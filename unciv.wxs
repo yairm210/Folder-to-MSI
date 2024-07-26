@@ -10,13 +10,13 @@
         <Icon Id="icon.ico" SourceFile="files/Unciv.ico"/>
 
         <DirectoryRef Id="INSTALLFOLDER">
-          <Component Id="Unciv" Guid="70aab056-7fbd-4a7a-9cbb-2275ee064f06">
+          <!-- Component Id="Unciv" Guid="70aab056-7fbd-4a7a-9cbb-2275ee064f06">
             <File Id="UncivExe"
                   KeyPath="yes"
                   Checksum="yes"
                   Source="files/Unciv.exe">
             </File>
-          </Component>
+          </Component-->
         </DirectoryRef>
     
         <ComponentGroup Id="UncivFiles" Directory="INSTALLFOLDER">
@@ -24,7 +24,7 @@
         </ComponentGroup>
 
 
-        <Component Id="UncivShortcuts" Directory="INSTALLFOLDER" Guid="0eac8b63-1cab-4645-b0cb-ad7535f0e9ce">
+        <!--Component Id="UncivShortcuts" Directory="INSTALLFOLDER" Guid="0eac8b63-1cab-4645-b0cb-ad7535f0e9ce">
           <Shortcut Id="StartMenuShortcut"
                     Name="$(var.Name)"
                     Target="[#UncivExe]"
@@ -34,7 +34,7 @@
           <RemoveFolder Id="CleanupStartMenuShortcut"
                         Directory="ApplicationProgramsFolder"
                         On="uninstall" />
-        </Component>
+        </Component-->
     
         <Feature Id="ProductFeature" Title="$(var.Name)" Level="1" ConfigurableDirectory="INSTALLFOLDER">
             <ComponentGroupRef Id="UncivFiles" />
