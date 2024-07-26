@@ -5,7 +5,8 @@
     <Package Language="1033"
              Manufacturer="Yair Morgenstern"
              Name="$(var.Name)"
-             Version="4.12.13">
+             Version="4.12.13"
+            UpgradeCode="74d42802-054a-4869-a703-658c361fe94c">
         <Icon Id="icon.ico" SourceFile="files/Unciv.ico"/>
 
         <DirectoryRef Id="INSTALLFOLDER">
