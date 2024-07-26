@@ -10,7 +10,7 @@
         <Icon Id="icon.ico" SourceFile="files/Unciv.ico"/>
 
         <DirectoryRef Id="INSTALLFOLDER">
-          <Component Id="Unciv">
+          <Component Id="Unciv" Guid="70aab056-7fbd-4a7a-9cbb-2275ee064f06">
             <File Id="UncivExe"
                   KeyPath="yes"
                   Checksum="yes"
