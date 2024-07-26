@@ -27,7 +27,9 @@ jobs:
         run: dotnet tool install --global wix
         
       - name: Build WiX on Windows
-        run: wix build .\Unciv.wixproj
+        run: |
+          wix build .\unciv.wxs
+          dir
         
       - name: Add generated binaries to artifact
         uses: actions/upload-artifact@v4
