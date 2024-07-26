@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+    <Package Language="1033"
+             Manufacturer="Yair Morgenstern"
+             Name="Unciv"
+             Scope="perUserOrMachine"
+             Version="4.12.13">
+        <Icon Id="icon.ico" SourceFile="files/icon.ico"/>
+        <Property Id="ARPPRODUCTICON" Value="icon.ico" />
+        <StandardDirectory Id="TARGETDIR">
+            <Directory Id="ProgramFilesFolder">
+                <Directory Id="INSTALLFOLDER" Name="nexus">
+                    <Component Id="ProductComponent">
+                        <File KeyPath="yes" Source="files\nexusw.exe" Name="unciv.exe"></File>
+                        <Shortcut Id="startmenuShortcut"
+                                  Directory="ProgramMenuDir"
+                                  Name="Unciv"
+                                  WorkingDirectory='INSTALLFOLDER'
+                                  Icon="icon.ico"
+                                  IconIndex="0"
+                                  Advertise="yes" />
+                    </Component>
+                </Directory>
+            </Directory>
+        </StandardDirectory>
+        <Directory Id="ProgramMenuFolder" Name="Programs">
+            <Directory Id="ProgramMenuDir" Name="Unciv"/>
+        </Directory>
+        <Feature Id="Unciv">
+            <ComponentRef Id="ProductComponent" />
+        </Feature>
+    </Package>
+</Wix>
