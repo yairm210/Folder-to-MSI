@@ -38,8 +38,8 @@
     
         <Feature Id="ProductFeature" Title="$(var.Name)" Level="1" ConfigurableDirectory="INSTALLFOLDER">
             <ComponentGroupRef Id="UncivFiles" />
-            <ComponentRef Id="Unciv" />
-            <ComponentRef Id="UncivShortcuts" />
+            <!--ComponentRef Id="Unciv" />
+            <ComponentRef Id="UncivShortcuts" /-->
         </Feature>
     
 
