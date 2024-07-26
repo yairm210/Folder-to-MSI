@@ -8,15 +8,12 @@
              Scope="perUserOrMachine"
              Version="4.12.13">
         <Icon Id="icon.ico" SourceFile="files/Unciv.ico"/>
-        <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." Schedule="afterInstallInitialize" />
-
 
         <DirectoryRef Id="INSTALLFOLDER">
           <Component Id="Unciv">
             <File Id="UncivExe"
                   KeyPath="yes"
                   Checksum="yes"
-                  Icon="icon.ico"
                   Source="files/Unciv.exe">
             </File>
           </Component>
@@ -30,7 +27,8 @@
         <Component Id="UncivShortcuts" Directory="INSTALLFOLDER">
           <Shortcut Id="StartMenuShortcut"
                     Name="$(var.Name)"
-                    Target="[#MoonlightExe]"
+                    Target="[#UncivExe]"
+                    Icon="icon.ico"
                     Directory="ApplicationProgramsFolder"
                     WorkingDirectory="INSTALLFOLDER" />
           <RemoveFolder Id="CleanupStartMenuShortcut"
