@@ -9,8 +9,6 @@
             UpgradeCode="74d42802-054a-4869-a703-658c361fe94c">
         <Icon Id="icon.ico" SourceFile="files/Unciv.ico"/>
 
-        <Files Include="files\**" />
-
         <DirectoryRef Id="INSTALLFOLDER">
           <Component Id="Unciv" Guid="70aab056-7fbd-4a7a-9cbb-2275ee064f06">
             <File Id="UncivExe"
@@ -22,6 +20,7 @@
         </DirectoryRef>
     
         <ComponentGroup Id="UncivFiles" Directory="INSTALLFOLDER">
+            <Files Include="files\**" />
         </ComponentGroup>
 
 
