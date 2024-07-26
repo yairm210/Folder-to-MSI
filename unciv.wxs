@@ -13,7 +13,7 @@
                     <Component Id="ProductComponent">
                         <File KeyPath="yes" Source="files\zip\Unciv.exe" Name="Unciv.exe"></File>
                         <File Source="files\zip\Unciv.jar" Name="Unciv.jar"></File>
-                        <Files Include="files\zip\jre**">
+                        <Files Include="files\zip\jre**"></Files>
                         <Shortcut Id="startmenuShortcut"
                                   Directory="ProgramMenuDir"
                                   Name="Unciv"
