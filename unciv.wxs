@@ -5,13 +5,15 @@
              Name="Unciv"
              Scope="perUserOrMachine"
              Version="4.12.13">
-        <Icon Id="icon.ico" SourceFile="files/icon.ico"/>
+        <Icon Id="icon.ico" SourceFile="files/Unciv.ico"/>
         <Property Id="ARPPRODUCTICON" Value="icon.ico" />
         <StandardDirectory Id="TARGETDIR">
             <Directory Id="ProgramFilesFolder">
                 <Directory Id="INSTALLFOLDER" Name="nexus">
                     <Component Id="ProductComponent">
-                        <File KeyPath="yes" Source="files\nexusw.exe" Name="unciv.exe"></File>
+                        <File KeyPath="yes" Source="files\zip\Unciv.exe" Name="Unciv.exe"></File>
+                        <File Source="files\zip\Unciv.jar" Name="Unciv.jar"></File>
+                        <Files Include="files\zip\jre**">
                         <Shortcut Id="startmenuShortcut"
                                   Directory="ProgramMenuDir"
                                   Name="Unciv"
