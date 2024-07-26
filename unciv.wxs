@@ -1,35 +1,55 @@
+﻿<?define Name = "Unciv" ?>
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
     <Package Language="1033"
              Manufacturer="Yair Morgenstern"
-             Name="Unciv"
+             Name="$(var.Name)"
              Scope="perUserOrMachine"
              Version="4.12.13">
         <Icon Id="icon.ico" SourceFile="files/Unciv.ico"/>
-        <Property Id="ARPPRODUCTICON" Value="icon.ico" />
-        <StandardDirectory Id="TARGETDIR">
-            <Directory Id="ProgramFilesFolder">
-                <Directory Id="INSTALLFOLDER" Name="nexus">
-                    <Component Id="ProductComponent">
-                        <File KeyPath="yes" Source="files\zip\Unciv.exe" Name="Unciv.exe"></File>
-                        <File Source="files\zip\Unciv.jar" Name="Unciv.jar"></File>
-                        <Files Include="files\zip\jre**"></Files>
-                        <Shortcut Id="startmenuShortcut"
-                                  Directory="ProgramMenuDir"
-                                  Name="Unciv"
-                                  WorkingDirectory='INSTALLFOLDER'
-                                  Icon="icon.ico"
-                                  IconIndex="0"
-                                  Advertise="yes" />
-                    </Component>
-                </Directory>
-            </Directory>
-        </StandardDirectory>
-        <Directory Id="ProgramMenuFolder" Name="Programs">
-            <Directory Id="ProgramMenuDir" Name="Unciv"/>
-        </Directory>
-        <Feature Id="Unciv">
-            <ComponentRef Id="ProductComponent" />
+        <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." Schedule="afterInstallInitialize" />
+
+
+        <DirectoryRef Id="INSTALLFOLDER">
+          <Component Id="Unciv">
+            <File Id="UncivExe"
+                  KeyPath="yes"
+                  Checksum="yes"
+                  Icon="icon.ico"
+                  Source="files/Unciv.exe">
+            </File>
+          </Component>
+        </DirectoryRef>
+    
+        <ComponentGroup Id="UncivFiles" Directory="INSTALLFOLDER">
+            <Files Include="files\**" />
+        </ComponentGroup>
+
+
+        <Component Id="UncivShortcuts" Directory="INSTALLFOLDER">
+          <Shortcut Id="StartMenuShortcut"
+                    Name="$(var.Name)"
+                    Target="[#MoonlightExe]"
+                    Directory="ApplicationProgramsFolder"
+                    WorkingDirectory="INSTALLFOLDER" />
+          <RemoveFolder Id="CleanupStartMenuShortcut"
+                        Directory="ApplicationProgramsFolder"
+                        On="uninstall" />
+        </Component>
+    
+        <Feature Id="ProductFeature" Title="$(var.Name)" Level="1" ConfigurableDirectory="INSTALLFOLDER">
+            <ComponentRef Id="UncivFiles" />
+            <ComponentRef Id="UncivShortcuts" />
         </Feature>
+    
+
+        <StandardDirectory Id="ProgramFiles6432Folder">
+            <Directory Id="INSTALLFOLDER" Name="$(var.InstallFolder)" />
+        </StandardDirectory>
+
+        <StandardDirectory Id="ProgramMenuFolder">
+          <Directory Id="ApplicationProgramsFolder" Name="$(var.InstallFolder)" />
+        </StandardDirectory>
+
     </Package>
 </Wix>
