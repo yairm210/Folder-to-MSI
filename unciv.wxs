@@ -5,7 +5,6 @@
     <Package Language="1033"
              Manufacturer="Yair Morgenstern"
              Name="$(var.Name)"
-             Scope="perUserOrMachine"
              Version="4.12.13">
         <Icon Id="icon.ico" SourceFile="files/Unciv.ico"/>
 
