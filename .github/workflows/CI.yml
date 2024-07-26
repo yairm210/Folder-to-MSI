@@ -20,8 +20,11 @@ jobs:
 
       - name: Unzip unciv file
         run: |
-           tar -xf files\Unciv-Windows64.zip 
-           dir
+           tar -xf files\Unciv-Windows64.zip -C files
+           dir files
+        
+      - name: Install WiX
+        run: dotnet tool install --global wix
         
       - name: Build WiX on Windows
         run: wix build .\unciv.wxs
