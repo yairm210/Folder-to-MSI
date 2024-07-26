@@ -20,7 +20,7 @@
         </DirectoryRef>
     
         <ComponentGroup Id="UncivFiles" Directory="INSTALLFOLDER">
-            <Files Include="files**" />
+            <Files Include="files\**" />
         </ComponentGroup>
 
 
