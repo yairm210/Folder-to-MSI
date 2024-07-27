@@ -38,6 +38,7 @@
           <RemoveFolder Id="CleanupStartMenuShortcut"
                         Directory="ApplicationProgramsFolder"
                         On="uninstall" />
+          <RegistryValue Root="HKCU" Key="Software\YairMorgenstern\Unciv" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
         </Component>
     
         <Feature Id="ProductFeature" Title="$(var.Name)" Level="1" ConfigurableDirectory="INSTALLFOLDER">
