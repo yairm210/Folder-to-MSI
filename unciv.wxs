@@ -28,15 +28,21 @@
         </ComponentGroup>
 
 
+        <Property Id="APPDATAFOLDER" Value="%APPDATA%\Unciv" />
+
         <Component Id="UncivShortcuts" Directory="INSTALLFOLDER" Guid="0eac8b63-1cab-4645-b0cb-ad7535f0e9ce">
           <Shortcut Id="StartMenuShortcut"
                     Name="$(var.Name)"
                     Target="[#UncivExe]"
+                    Arguments="--data-dir=%APPDATA%\Unciv"
                     Icon="icon.ico"
                     Directory="ApplicationProgramsFolder"
                     WorkingDirectory="INSTALLFOLDER" />
           <RemoveFolder Id="CleanupStartMenuShortcut"
                         Directory="ApplicationProgramsFolder"
+                        On="uninstall" />
+          <RemoveFolder Id="CleanupAppData"
+                        Directory="APPDATAFOLDER"
                         On="uninstall" />
           <RegistryValue Root="HKCU" Key="Software\YairMorgenstern\Unciv" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
         </Component>
