@@ -46,7 +46,7 @@
         </Feature>
     
 
-        <StandardDirectory Id="ProgramFiles6432Folder">
+        <StandardDirectory Id="ProgramFiles64Folder">
             <Directory Id="INSTALLFOLDER" Name="$(var.InstallFolder)" />
         </StandardDirectory>
 
