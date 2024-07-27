@@ -27,9 +27,6 @@
             <Files Include="files\**" />
         </ComponentGroup>
 
-
-        <Property Id="APPDATAFOLDER" Value="%APPDATA%\Unciv" />
-
         <Component Id="UncivShortcuts" Directory="INSTALLFOLDER" Guid="0eac8b63-1cab-4645-b0cb-ad7535f0e9ce">
           <Shortcut Id="StartMenuShortcut"
                     Name="$(var.Name)"
@@ -56,6 +53,10 @@
 
         <StandardDirectory Id="ProgramFiles64Folder">
             <Directory Id="INSTALLFOLDER" Name="$(var.InstallFolder)" />
+        </StandardDirectory>
+
+        <StandardDirectory Id="AppDataFolder">
+            <Directory Id="APPDATAFOLDER" Name="$(var.InstallFolder)" />
         </StandardDirectory>
 
         <StandardDirectory Id="ProgramMenuFolder">
