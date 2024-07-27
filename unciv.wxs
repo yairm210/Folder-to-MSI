@@ -8,6 +8,7 @@
              Version="4.12.13"
             UpgradeCode="74d42802-054a-4869-a703-658c361fe94c">
         <Icon Id="icon.ico" SourceFile="files/Unciv.ico"/>
+        <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." Schedule="afterInstallInitialize" />
 
         <!-- Pack all the files into the MSI instead of spreading this over .cab files -->
         <MediaTemplate CompressionLevel="high" EmbedCab="yes" />
