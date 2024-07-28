@@ -32,7 +32,7 @@
           <Shortcut Id="StartMenuShortcut"
                     Name="$(var.Name)"
                     Target="[#UncivExe]"
-                    Arguments="--data-dir=%APPDATA%\Unciv"
+                    Arguments="--data-dir=%APPDATA%\$(var.InstallFolder)"
                     Icon="icon.ico"
                     Directory="ApplicationProgramsFolder"
                     WorkingDirectory="INSTALLFOLDER" />
