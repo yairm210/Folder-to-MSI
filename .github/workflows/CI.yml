@@ -20,8 +20,8 @@ jobs:
 
       - name: Unzip unciv file
         run: |
-           tar -xf files\Unciv-Windows64.zip -C files
-           del files\Unciv-Windows64.zip
+           tar -xf files\Folder.zip -C files
+           del files\Folder.zip
            dir files
         
       - name: Install WiX
