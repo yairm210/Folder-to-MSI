@@ -30,7 +30,7 @@ jobs:
       - name: Build WiX on Windows
         shell: bash
         run: |
-          UNCIV_VERSION=4.12.14 wix build .\unciv.wxs
+          UNCIV_VERSION=4.12.14 wix build unciv.wxs
         
       - name: Add generated binaries to artifact
         uses: actions/upload-artifact@v4
