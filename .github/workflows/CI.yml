@@ -29,7 +29,7 @@ jobs:
         
       - name: Build WiX on Windows
         run: |
-          set UNCIV_VERSION=4.12.14 && wix build .\unciv.wxs
+          cmd /C "set UNCIV_VERSION=4.12.14 && wix build .\unciv.wxs"
           dir
         
       - name: Add generated binaries to artifact
