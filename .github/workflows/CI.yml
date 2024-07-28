@@ -29,7 +29,7 @@ jobs:
         
       - name: Build WiX on Windows
         run: | # Trying to set env variables for a simple command is like ???, now I truly understand the "Windows Sucks" mentality. 
-          rem The space after the version is intentionally ommited, otherwise the env var contains a space. *sigh*
+          # The space after the version is intentionally ommited, otherwise the env var contains a space. *sigh*
           cmd /C "set UNCIV_VERSION=4.12.14&& wix build .\unciv.wxs"
           dir
         
