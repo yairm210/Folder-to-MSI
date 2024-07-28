@@ -18,7 +18,7 @@ jobs:
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v2
 
-      - name: Unzip unciv file
+      - name: Unzip folder
         run: |
            tar -xf files\Folder.zip -C files
            del files\Folder.zip
@@ -35,8 +35,8 @@ jobs:
       - name: Add generated binaries to artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Unciv-MSI
+          name: App-MSI
           path: |
-            Unciv.msi
+            App.msi
           if-no-files-found: error
 
