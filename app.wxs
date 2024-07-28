@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<?define Name = "Unciv" ?>
-<?define InstallFolder = "Unciv" ?>
+<?define Name = "YOUR APP" ?>
+<?define InstallFolder = "YOUR APP FOLDER" ?>
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
     <Package Language="1033"
-             Manufacturer="Yair Morgenstern"
+             Manufacturer="YOUR NAME"
              Name="$(var.Name)"
              Version="$(env.APP_VERSION).0"
             UpgradeCode="74d42802-054a-4869-a703-658c361fe94c">
@@ -42,7 +42,7 @@
           <RemoveFolder Id="CleanupAppData"
                         Directory="APPDATAFOLDER"
                         On="uninstall" />
-          <RegistryValue Root="HKCU" Key="Software\YairMorgenstern\Unciv" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+          <RegistryValue Root="HKCU" Key="Software\YOURNAME\YOURAPP" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
         </Component>
     
         <Feature Id="ProductFeature" Title="$(var.Name)" Level="1" ConfigurableDirectory="INSTALLFOLDER">

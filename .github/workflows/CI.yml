@@ -36,7 +36,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: App-MSI
-          path: |
-            App.msi
+          path: App.msi
           if-no-files-found: error
 
